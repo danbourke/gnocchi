@@ -38,7 +38,7 @@ class gnocchi(object):
         ingredient("porcini mushrooms", tags=["fancy", "vegetarian", "vegan", "no_dairy"], type="mushroom"),
         ingredient("dried shiitake mushrooms", tags=["fancy", "dried", "vegetarian", "vegan", "no_dairy"], type="mushroom"),
         ingredient("dried porcini mushrooms", tags=["fancy", "dried", "vegetarian", "vegan", "no_dairy"], type="mushroom"),
-        ingredient("haloumi", tags=["vegetarian"], type="cheese"),
+        ingredient("haloumi", tags=["vegetarian", "any"], type="cheese"),
         ingredient("air", tags=["breatharian"], type="air"),
     ]
     liquids = [
@@ -201,6 +201,8 @@ def main():
 
     if args.imperial:
         sys.exit("No. There's barely and measurements in this recipe but also just l2metric, c'mon")
+    if args.blog:
+        sys.exit("Unfortunately I don't have GPT-3 API key so I can't do this yet. Sorry :(")
     g = gnocchi(args)
 
 

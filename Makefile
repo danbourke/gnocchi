@@ -9,6 +9,9 @@ gnocchi:
 fast:
 	python3 gnocc.py --fast
 
+fancy:
+	python3 gnocc.py --fancy
+
 vegan:
 	python3 gnocc.py --vegan
 

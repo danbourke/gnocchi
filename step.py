@@ -71,10 +71,14 @@ class dumpling(step):
                 "Once you've got your dough, grab a chunk of it, and roll it out snake-style with your hands, on a reasonably clean and un-sticky surface (i.e. you'll need another tray, or to clean your bench, probably. sorry.). Cut the snake into little pillows and put them on yet *another* tray. Maybe put some flour down first, or some baking paper.",
                 "Repeat the snake-make and snake-kill steps until you no longer have any dough, and do have a lot of little gnocchi.",
                 "(optional) If you want to be fancy you can kind of roll a the gnocchi around your thumb with the back of a fork, or just poke them all with your finger so they have a nice dent. But you can also just not do that, and it'll be fine.",
-                "(optional) If you want, you can fry the gnocchi at this point. In a heavy pan with a bit of oil (or butter), over medium or high, put a single layer of gnocchi down, and leave them there until that one side is golden brown and delicious. Take them out and move on with your life.",
             ]
             if 'vegan' in tags:
                 self.method.insert(0, "Disclaimer: I have never made vegan gnocchi. But probably it'll be fine.")
+                self.method.append("(optional) If you want, you can fry the gnocchi at this point. In a heavy pan with a bit of oil, over medium or high, put a single layer of gnocchi down, and leave them there until that one side is golden brown and delicious. Take them out and move on with your life.")
+            elif 'no_dairy' in tags:
+                self.method.append("(optional) If you want, you can fry the gnocchi at this point. In a heavy pan with a bit of oil, over medium or high, put a single layer of gnocchi down, and leave them there until that one side is golden brown and delicious. Take them out and move on with your life.")
+            else:
+                self.method.append("(optional) If you want, you can fry the gnocchi at this point. In a heavy pan with a bit of oil (or butter), over medium or high, put a single layer of gnocchi down, and leave them there until that one side is golden brown and delicious. Take them out and move on with your life.")
         else:
             self.ingredients = ["{}".format(dumpling)]
             self.requirements = []
